@@ -1,2 +1,3 @@
-# bemfit-server
-Backend do Projeto Bem Fit
+# Strapi application
+
+A quick description of your strapi application

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produtos",
+  "info": {
+    "name": "Produtos"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "fotos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "preco": {
+      "type": "decimal"
+    },
+    "preco_promocional": {
+      "type": "decimal"
+    },
+    "produto_em_promocao": {
+      "type": "boolean"
+    },
+    "ingredientes": {
+      "type": "string"
+    },
+    "produto_low_carb": {
+      "type": "boolean"
+    },
+    "produto_sem_gluten": {
+      "type": "boolean"
+    }
+  }
+}
