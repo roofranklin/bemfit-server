@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "produtos",
+  "collectionName": "tags",
   "info": {
-    "name": "Produtos",
-    "description": ""
+    "name": "Tags"
   },
   "options": {
     "increments": true,
@@ -16,7 +15,7 @@
       "type": "string"
     },
     "descricao": {
-      "type": "richtext"
+      "type": "string"
     },
     "fotos": {
       "collection": "file",
@@ -30,25 +29,9 @@
       "required": false,
       "pluginOptions": {}
     },
-    "preco": {
-      "type": "decimal"
-    },
-    "preco_promocional": {
-      "type": "decimal"
-    },
-    "produto_em_promocao": {
-      "type": "boolean"
-    },
-    "ingredientes": {
-      "type": "string"
-    },
-    "categoria": {
-      "model": "categorias"
-    },
-    "tags": {
-      "collection": "tags",
-      "via": "produtos",
-      "dominant": true
+    "produtos": {
+      "via": "tags",
+      "collection": "produtos"
     }
   }
 }

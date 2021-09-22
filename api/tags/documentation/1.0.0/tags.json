@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/produtos": {
+    "/tags": {
       "get": {
         "deprecated": false,
-        "description": "Find all the produtos's records",
+        "description": "Find all the tags's records",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve tags document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Produtos"
+                    "$ref": "#/components/schemas/Tags"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Tags"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new produtos record",
+        "description": "Create a new tags record",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve tags document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produtos"
+                  "$ref": "#/components/schemas/Tags"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Tags"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProdutos"
+                "$ref": "#/components/schemas/NewTags"
               }
             }
           }
         }
       }
     },
-    "/produtos/count": {
+    "/tags/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the number of produtos documents",
+        "description": "Retrieve the number of tags documents",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve tags document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Tags"
         ],
         "parameters": []
       }
     },
-    "/produtos/{id}": {
+    "/tags/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one produtos record",
+        "description": "Find one tags record",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve tags document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produtos"
+                  "$ref": "#/components/schemas/Tags"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Tags"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single produtos record",
+        "description": "Update a single tags record",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve tags document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produtos"
+                  "$ref": "#/components/schemas/Tags"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Tags"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProdutos"
+                "$ref": "#/components/schemas/NewTags"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single produtos record",
+        "description": "Delete a single tags record",
         "responses": {
           "200": {
-            "description": "deletes a single produtos based on the ID supplied",
+            "description": "deletes a single tags based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Tags"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Produtos": {
+      "Tags": {
         "required": [
           "id"
         ],
@@ -598,56 +598,7 @@
               }
             }
           },
-          "preco": {
-            "type": "number"
-          },
-          "preco_promocional": {
-            "type": "number"
-          },
-          "produto_em_promocao": {
-            "type": "boolean"
-          },
-          "ingredientes": {
-            "type": "string"
-          },
-          "categoria": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "titulo": {
-                "type": "string"
-              },
-              "descricao": {
-                "type": "string"
-              },
-              "fotos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "subcategorias": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "tags": {
+          "produtos": {
             "type": "array",
             "items": {
               "required": [
@@ -669,7 +620,22 @@
                     "type": "string"
                   }
                 },
-                "produtos": {
+                "preco": {
+                  "type": "number"
+                },
+                "preco_promocional": {
+                  "type": "number"
+                },
+                "produto_em_promocao": {
+                  "type": "boolean"
+                },
+                "ingredientes": {
+                  "type": "string"
+                },
+                "categoria": {
+                  "type": "string"
+                },
+                "tags": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -693,7 +659,7 @@
           }
         }
       },
-      "NewProdutos": {
+      "NewTags": {
         "properties": {
           "nome": {
             "type": "string"
@@ -701,22 +667,7 @@
           "descricao": {
             "type": "string"
           },
-          "preco": {
-            "type": "number"
-          },
-          "preco_promocional": {
-            "type": "number"
-          },
-          "produto_em_promocao": {
-            "type": "boolean"
-          },
-          "ingredientes": {
-            "type": "string"
-          },
-          "categoria": {
-            "type": "string"
-          },
-          "tags": {
+          "produtos": {
             "type": "array",
             "items": {
               "type": "string"
@@ -738,7 +689,7 @@
   },
   "tags": [
     {
-      "name": "Produtos"
+      "name": "Tags"
     }
   ]
 }

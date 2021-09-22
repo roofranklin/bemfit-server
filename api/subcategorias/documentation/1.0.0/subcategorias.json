@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/produtos": {
+    "/subcategorias": {
       "get": {
         "deprecated": false,
-        "description": "Find all the produtos's records",
+        "description": "Find all the subcategorias's records",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve subcategorias document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Produtos"
+                    "$ref": "#/components/schemas/Subcategorias"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Subcategorias"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new produtos record",
+        "description": "Create a new subcategorias record",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve subcategorias document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produtos"
+                  "$ref": "#/components/schemas/Subcategorias"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Subcategorias"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProdutos"
+                "$ref": "#/components/schemas/NewSubcategorias"
               }
             }
           }
         }
       }
     },
-    "/produtos/count": {
+    "/subcategorias/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the number of produtos documents",
+        "description": "Retrieve the number of subcategorias documents",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve subcategorias document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Subcategorias"
         ],
         "parameters": []
       }
     },
-    "/produtos/{id}": {
+    "/subcategorias/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one produtos record",
+        "description": "Find one subcategorias record",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve subcategorias document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produtos"
+                  "$ref": "#/components/schemas/Subcategorias"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Subcategorias"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single produtos record",
+        "description": "Update a single subcategorias record",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve subcategorias document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produtos"
+                  "$ref": "#/components/schemas/Subcategorias"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Subcategorias"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProdutos"
+                "$ref": "#/components/schemas/NewSubcategorias"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single produtos record",
+        "description": "Delete a single subcategorias record",
         "responses": {
           "200": {
-            "description": "deletes a single produtos based on the ID supplied",
+            "description": "deletes a single subcategorias based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Subcategorias"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Produtos": {
+      "Subcategorias": {
         "required": [
           "id"
         ],
@@ -598,129 +598,19 @@
               }
             }
           },
-          "preco": {
-            "type": "number"
-          },
-          "preco_promocional": {
-            "type": "number"
-          },
-          "produto_em_promocao": {
-            "type": "boolean"
-          },
-          "ingredientes": {
-            "type": "string"
-          },
-          "categoria": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "titulo": {
-                "type": "string"
-              },
-              "descricao": {
-                "type": "string"
-              },
-              "fotos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "subcategorias": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "nome": {
-                  "type": "string"
-                },
-                "descricao": {
-                  "type": "string"
-                },
-                "fotos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "produtos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewProdutos": {
+      "NewSubcategorias": {
         "properties": {
           "nome": {
             "type": "string"
           },
           "descricao": {
             "type": "string"
-          },
-          "preco": {
-            "type": "number"
-          },
-          "preco_promocional": {
-            "type": "number"
-          },
-          "produto_em_promocao": {
-            "type": "boolean"
-          },
-          "ingredientes": {
-            "type": "string"
-          },
-          "categoria": {
-            "type": "string"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",
@@ -738,7 +628,7 @@
   },
   "tags": [
     {
-      "name": "Produtos"
+      "name": "Subcategorias"
     }
   ]
 }

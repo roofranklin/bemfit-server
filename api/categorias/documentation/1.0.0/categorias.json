@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/produtos": {
+    "/categorias": {
       "get": {
         "deprecated": false,
-        "description": "Find all the produtos's records",
+        "description": "Find all the categorias's records",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve categorias document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Produtos"
+                    "$ref": "#/components/schemas/Categorias"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Categorias"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new produtos record",
+        "description": "Create a new categorias record",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve categorias document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produtos"
+                  "$ref": "#/components/schemas/Categorias"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Categorias"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProdutos"
+                "$ref": "#/components/schemas/NewCategorias"
               }
             }
           }
         }
       }
     },
-    "/produtos/count": {
+    "/categorias/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the number of produtos documents",
+        "description": "Retrieve the number of categorias documents",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve categorias document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Categorias"
         ],
         "parameters": []
       }
     },
-    "/produtos/{id}": {
+    "/categorias/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one produtos record",
+        "description": "Find one categorias record",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve categorias document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produtos"
+                  "$ref": "#/components/schemas/Categorias"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Categorias"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single produtos record",
+        "description": "Update a single categorias record",
         "responses": {
           "200": {
-            "description": "Retrieve produtos document(s)",
+            "description": "Retrieve categorias document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produtos"
+                  "$ref": "#/components/schemas/Categorias"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Categorias"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProdutos"
+                "$ref": "#/components/schemas/NewCategorias"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single produtos record",
+        "description": "Delete a single categorias record",
         "responses": {
           "200": {
-            "description": "deletes a single produtos based on the ID supplied",
+            "description": "deletes a single categorias based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Produtos"
+          "Categorias"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Produtos": {
+      "Categorias": {
         "required": [
           "id"
         ],
@@ -522,7 +522,7 @@
           "id": {
             "type": "string"
           },
-          "nome": {
+          "titulo": {
             "type": "string"
           },
           "descricao": {
@@ -598,56 +598,7 @@
               }
             }
           },
-          "preco": {
-            "type": "number"
-          },
-          "preco_promocional": {
-            "type": "number"
-          },
-          "produto_em_promocao": {
-            "type": "boolean"
-          },
-          "ingredientes": {
-            "type": "string"
-          },
-          "categoria": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "titulo": {
-                "type": "string"
-              },
-              "descricao": {
-                "type": "string"
-              },
-              "fotos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "subcategorias": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "tags": {
+          "subcategorias": {
             "type": "array",
             "items": {
               "required": [
@@ -664,12 +615,6 @@
                   "type": "string"
                 },
                 "fotos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "produtos": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -693,30 +638,15 @@
           }
         }
       },
-      "NewProdutos": {
+      "NewCategorias": {
         "properties": {
-          "nome": {
+          "titulo": {
             "type": "string"
           },
           "descricao": {
             "type": "string"
           },
-          "preco": {
-            "type": "number"
-          },
-          "preco_promocional": {
-            "type": "number"
-          },
-          "produto_em_promocao": {
-            "type": "boolean"
-          },
-          "ingredientes": {
-            "type": "string"
-          },
-          "categoria": {
-            "type": "string"
-          },
-          "tags": {
+          "subcategorias": {
             "type": "array",
             "items": {
               "type": "string"
@@ -738,7 +668,7 @@
   },
   "tags": [
     {
-      "name": "Produtos"
+      "name": "Categorias"
     }
   ]
 }
